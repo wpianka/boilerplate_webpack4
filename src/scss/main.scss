@@ -1,4 +1,4 @@
-$bg: blue;
+$bg: fff;
 
 body {
     background: $bg;
@@ -10,9 +10,8 @@ p {
     text-align: center;
     font-size: 30px;
 }
-.example {
-    display: grid;
-    transition: all 0.5s;
-    user-select: none;
-    background: linear-gradient(to bottom, white, black);
+.container {
+   width: 80%;
+   margin: 0 auto;
+   border: 1px solid #000;
 }
