@@ -58,7 +58,7 @@ module.exports = (env, options) => {
                     ]
                 },
                 {
-                    test: /\.(png|svg|jpg|gif)$/,
+                    test: /\.(png|svg|jpe?g|gif)$/,
                     exclude: /fonts?/,
                     use:[
                         {
@@ -67,6 +67,12 @@ module.exports = (env, options) => {
                                 name: '[name].[ext]',
                                 outputPath: 'images'
                             }
+                        },
+                        {
+                            loader: 'image-webpack-loader',
+                            options: {
+                                disable: isProd ? false : true
+                            },
                         }
                     ]
                 },
