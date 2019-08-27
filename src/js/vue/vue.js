@@ -1,4 +1,10 @@
-import './lib';
-import './exem';
+import { Counter } from './components/counter'
 
-console.log('Witaj Vue');
+
+new Vue({
+    el: '#app',
+    components: {
+        "edu-counter": Counter 
+     }
+    
+});

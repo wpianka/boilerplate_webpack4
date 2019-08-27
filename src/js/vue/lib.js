@@ -1,1 +1,0 @@
-console.log("to jest lib Vue");

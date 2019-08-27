@@ -36,18 +36,6 @@ module.exports = (env, options) => {
                     ]
                 },
                 {
-                    test: /\.(png|svg|jpg|gif)$/,
-                    use:[
-                        {
-                           loader: 'file-loader',
-                            options: {
-                                name: '[name].[ext]',
-                                outputPath: 'images'
-                            }
-                        }
-                    ]
-                },
-                {
                     test: /\.(scss|sass|css)$/,
                     exclude: /node_modules/,
                     use: [
@@ -68,6 +56,37 @@ module.exports = (env, options) => {
                             options: { sourceMap: isProd ? false : true }
                         }
                     ]
+                },
+                {
+                    test: /\.(png|svg|jpe?g|gif)$/,
+                    exclude: /fonts?/,
+                    use:[
+                        {
+                           loader: 'file-loader',
+                            options: {
+                                name: '[name].[ext]',
+                                outputPath: 'images'
+                            }
+                        },
+                        {
+                            loader: 'image-webpack-loader',
+                            options: {
+                                disable: isProd ? false : true
+                            },
+                        }
+                    ]
+                },
+                {
+                    test: /\.(eot|svg|woff|woff2|ttf)$/,
+                    exclude: /(img|images?)/,
+                    use: 
+                        {
+                            loader: 'file-loader',
+                            options: {
+                                name: '[name].[ext]',
+                                outputPath: 'fonts/'
+                            }
+                        }
                 }
             ]
         },
