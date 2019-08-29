@@ -25,3 +25,5 @@ npm run build
 * SASS Support - [sass-loader](7.3.1)
 * CSS optimizer - [postcss-loader, cssnano]
 * IMAGE optimize - [image-webpack-loader](v5.0.0)
+* VUE Support - [vue-loader, vue-template-compiler]
+
