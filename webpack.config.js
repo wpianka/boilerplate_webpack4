@@ -59,7 +59,9 @@ module.exports = (env, options) => {
                         },
                         {
                             loader: 'sass-loader',
-                            options: { sourceMap: isProd ? false : true }
+                            options: { 
+                                sourceMap: isProd ? false : true,
+                             }
                         }
                     ]
                 },
